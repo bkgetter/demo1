@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .layer:nth-child(1) {
+        background-image: url(./images/1.png);
+      }
+      .layer:nth-child(2) {
+        position: relative;
+        top: -186px;
+      }
+      #footer {
+        width: 210vh;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="footer">
+      <div class="layer">
+        <img
+          src="./images/2.png"
+          height="191"
+          width="2090"
+          style="transform: translate(0px, 0px) rotate(0deg); filter: blur(0px)"
+        />
+      </div>
+      <div class="layer">
+        <img
+          src="./images/4.png"
+          height="191"
+          width="2090"
+          style="transform: translate(0px, 0px) rotate(0deg); filter: blur(0px)"
+        />
+      </div>
+    </div>
+    <script>
+      var imgs = document.getElementsByClassName("layer");
+      const imgs1 = document.querySelectorAll("img");
+      console.log(imgs);
+      console.log(imgs1);
+      setInterval(() => {
+        setTimeout(() => {
+          imgs1[0].src = "./images/2-zha.png";
+        });
+        setTimeout(() => {
+          imgs1[0].src = "./images/2-bi.png";
+        }, 100);
+        setTimeout(() => {
+          imgs1[0].src = "./images/2-zha.png";
+        }, 300);
+        setTimeout(() => {
+          imgs1[0].src = "./images/2.png";
+        }, 400);
+      }, 3000);
+    </script>
+  </body>
+</html>

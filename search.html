@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.10.0-10/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        height: 100vh;
+        background: #fea47f;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .search-box {
+        height: 40px;
+        background: #6d214f;
+        padding: 10px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .search-box .search-input {
+        background: none;
+        width: 0px;
+        border: none;
+        outline: none;
+        color: white;
+        font-size: 20px;
+      }
+      .search-box .btn {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fea47f;
+        text-decoration: none;
+        font-size: 20px;
+        border-radius: 50%;
+      }
+      .search-box:hover .search-input {
+        width: 250px;
+        transition: 0.5s;
+      }
+      .search-box:hover .btn {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="search-box">
+      <input type="text" class="search-input" />
+      <a href="#" class="btn">
+        <i class="fas fa-search"></i>
+      </a>
+    </div>
+  </body>
+</html>

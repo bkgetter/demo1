@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: radial-gradient(#999, #293242);
+        /* background: radial-gradient(#999, #bc4641);*/
+        /* background: radial-gradient(#999, #cc6c0e);*/
+      }
+      body .container {
+        width: 400px;
+        height: 400px;
+        position: relative;
+      }
+      .container .item {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        /*已下面的中心点纬原点进行变形
+        */
+        transform-origin: center bottom;
+        transition: all 0.5s;
+        left: 0;
+        top: 0;
+      }
+      .container .left {
+        left: 400px;
+        filter: blur(20px);
+      }
+      .container .right {
+        left: -400px;
+        filter: blur(20px);
+      }
+      .container .middle {
+        transform: scale(1.4);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div
+        class="item left"
+        data-color=" radial-gradient(#999, #cc6c0e)"
+        onclick="aa()"
+      >
+        <img src="./images/鸣人.png" width="100%" alt="" />
+      </div>
+      <div
+        class="item middle"
+        data-color="radial-gradient(#999, #293242)"
+        onclick="bb()"
+      >
+        <img src="./images/佐助.png" width="100%" alt="" />
+      </div>
+      <div
+        class="item right"
+        data-color="radial-gradient(#999, #bc4641)"
+        onclick="cc()"
+      >
+        <img src="./images/小樱.png" width="100%" alt="" />
+      </div>
+    </div>
+  </body>
+  <script>
+    const img = document.querySelectorAll(".item");
+    // var color1 = document.getElementsByClassName("item").dataset.color;
+    for (let i = 0; i < img.length; i++) {
+      img[i].addEventListener("click", function () {
+        //被点击的元素在中间
+        this.classList.remove("left", "middle", "right");
+        this.classList.add("middle");
+        document.body.style.background = this.dataset.color;
+        //左侧元素变化
+        let left = this.previousElementSibling ?? img[img.length - 1];
+        left.classList.remove("left", "middle", "right");
+        left.classList.add("left");
+
+        let right = this.nextElementSibling ?? img[0];
+        right.classList.remove("left", "middle", "right");
+        right.classList.add("right");
+      });
+    }
+    /* function aa() {
+      document.body.style.background = img[0].dataset.color;
+    }
+    function bb() {
+      document.body.style.background = img[1].dataset.color;
+    }
+    function cc() {
+      document.body.style.background = img[2].dataset.color;
+    }*/
+  </script>
+</html>

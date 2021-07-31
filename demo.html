@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: radial-gradient(#999, #293242);
+        /* background: radial-gradient(#999, #bc4641);*/
+        /* background: radial-gradient(#999, #cc6c0e);*/
+      }
+      div {
+        border: blanchedalmond 3px solid;
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-color="red" class="a" onclick="aa()"></div>
+    <div
+      data-color="radial-gradient(#999, #cc6c0e)"
+      class="a"
+      onclick="bb()"
+    ></div>
+    <div data-color="yellow" class="a" onclick="cc()"></div>
+    <script>
+      const data = document.querySelectorAll(".a");
+      function aa() {
+        document.body.style.background = data[0].dataset.color;
+      }
+      function bb() {
+        document.body.style.background = data[1].dataset.color;
+      }
+      function cc() {
+        document.body.style.background = data[2].dataset.color;
+      }
+    </script>
+  </body>
+</html>
